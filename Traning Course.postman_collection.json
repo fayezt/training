@@ -1,0 +1,2148 @@
+{
+	"info": {
+		"_postman_id": "a7a0e126-d858-49bf-ac2a-f468e71213ad",
+		"name": "Traning Course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15815069"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/auth/login",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Credential Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000admin/api/v1/auth/login",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000admin",
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:26:39 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:26:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"failed\",\n    \"errors\": null,\n    \"message\": \"Credential Error\",\n    \"code\": 403\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"password\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/auth/login",
+											"host": [
+												"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+											],
+											"path": [
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:28:58 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:28:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"profile\": {\n            \"name\": \"Prof. Dave Nitzsche III\",\n            \"email\": \"test@test.com\"\n        },\n        \"token\": \"1|P3iCR0lRpb4OmwfzcKLb9k0xlCDuQMZ7eoiwNXQq\"\n    },\n    \"message\": \"Successfully Login\",\n    \"code\": 200\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Course",
+					"item": [
+						{
+							"name": "Appointment",
+							"item": [
+								{
+									"name": "Set Appointment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "2|0qP87foJ3wBywvn2UhhGZ9YcITwYbaXjNFXuJLTA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"start\":\"2022-12-01\",\r\n    \"end\":\"2022-12-30\"\r\n   \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course/4/appointment",
+											"host": [
+												"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+											],
+											"path": [
+												"course",
+												"4",
+												"appointment"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Appointment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "2|2DEGrQv0siu4kECgEoUi5GflkQezE6VObVHbEmD7",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"start\":\"2022-11-21\",\r\n    \"end\":\"2022-11-25\"\r\n   \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course/4/appointment/5",
+											"host": [
+												"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+											],
+											"path": [
+												"course",
+												"4",
+												"appointment",
+												"5"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|9UAymFVzaDyTxn5YOgvQzurKwheBW5IbDxf1SYkz",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"course"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000admin/api/v1/course",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000admin",
+											"path": [
+												"api",
+												"v1",
+												"course"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:46:55 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:46:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"Iure sed.\",\n                \"created_at\": \"2022-12-27 04:37\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Architecto.\",\n                \"created_at\": \"2022-12-27 04:37\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Beatae.\",\n                \"created_at\": \"2022-12-27 04:37\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Placeat.\",\n                \"created_at\": \"2022-12-27 04:37\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Voluptas.\",\n                \"created_at\": \"2022-12-27 04:37\"\n            }\n        ],\n        \"total\": 10,\n        \"next\": \"http://127.0.0.1:8000/api/v1/course?page=2\",\n        \"previous\": \"\",\n        \"current_page\": 1,\n        \"number_pages\": 2,\n        \"items_per_page\": 5\n    },\n    \"message\": \"Successfully Get Courses\",\n    \"code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|9UAymFVzaDyTxn5YOgvQzurKwheBW5IbDxf1SYkz",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course/1",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"course",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000admin/api/v1/course/1",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000admin",
+											"path": [
+												"api",
+												"v1",
+												"course",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:08:55 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:08:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Iure sed.\",\n        \"description\": \"Quidem qui tempora veniam. Aliquid voluptas quis et odit minima aut aut. Atque est quo alias et non rem. Dolor quis fugiat voluptas sapiente alias tempora fugiat.\",\n        \"created_at\": \"2022-12-27 04:37\"\n    },\n    \"message\": \"Successfully Show Details Course\",\n    \"code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|9UAymFVzaDyTxn5YOgvQzurKwheBW5IbDxf1SYkz",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Test Course\",\r\n    \"description\":\"Lorem Ibssume\",\r\n    \"lecturers\":[\"name1\",\"name2\",\"name3\"],\r\n    \"price\":145\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"course"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"Test Course\",\r\n    \"description\":\"Lorem Ibssume\",\r\n    \"lecturers\":[\"name1\",\"name2\",\"name3\"],\r\n    \"price\":145\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://trainingadmin.fayez-tarboosh.com/admin/api/v1/course",
+											"protocol": "https",
+											"host": [
+												"trainingadmin",
+												"fayez-tarboosh",
+												"com"
+											],
+											"path": [
+												"admin",
+												"api",
+												"v1",
+												"course"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:11:05 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:11:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "57"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 11,\n        \"name\": \"Test Course\",\n        \"created_at\": \"2022-12-27 05:11\"\n    },\n    \"message\": \"Successfully Store New Course\",\n    \"code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|9UAymFVzaDyTxn5YOgvQzurKwheBW5IbDxf1SYkz",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Test Course2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course/11",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"course",
+										"11"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"Test Course2\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000admin/api/v1/course/11",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000admin",
+											"path": [
+												"api",
+												"v1",
+												"course",
+												"11"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:14:17 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:14:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 11,\n        \"name\": \"Test Course2\",\n        \"created_at\": \"2022-12-27 05:11\"\n    },\n    \"message\": \"Successfully Update Course\",\n    \"code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|9UAymFVzaDyTxn5YOgvQzurKwheBW5IbDxf1SYkz",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Test Course\",\r\n    \"description\":\"Lorem Ibssume\",\r\n    \"lecturers\":[\"name1\",\"name2\",\"name3\"],\r\n    \"price\":145\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/course/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"course",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\":\"Test Course\",\r\n    \"description\":\"Lorem Ibssume\",\r\n    \"lecturers\":[\"name1\",\"name2\",\"name3\"],\r\n    \"price\":145\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/course/2",
+											"host": [
+												"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+											],
+											"path": [
+												"course",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:12:21 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 17:12:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "54"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": null,\n    \"message\": \"Successfully Delete Course\",\n    \"code\": 200\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/category",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/category/1",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Category 1\",\r\n    \"color\":\"red\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/category",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Category 2\",\r\n    \"color\":\"green\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/category/6",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"category",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Category 2\",\r\n    \"color\":\"green\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/category/6",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"category",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Lecturer",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/lecturer",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"lecturer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/lecturer/1",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"lecturer",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sloom\",\r\n    \"specialization\": \"Software Developer\",\r\n    \"avatar\": \"http://127.0.0.1:8000/assets/img/placeholder-avatar.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/lecturer",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"lecturer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mahmoud Salameh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/lecturer/6",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"lecturer",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|O2k697M5UJa31CwA56t7HLjYuMeHvFWlCWo16VKP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Category 2\",\r\n    \"color\":\"green\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_admin_v1}}/lecturer/6",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_admin_v1}}"
+									],
+									"path": [
+										"lecturer",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"customer@test.com\",\r\n    \"password\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_customer_v1}}/auth/login",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_customer_v1}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Credential Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:26:39 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:26:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"failed\",\n    \"errors\": null,\n    \"message\": \"Credential Error\",\n    \"code\": 403\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"password\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:28:58 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:28:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"profile\": {\n            \"name\": \"Prof. Dave Nitzsche III\",\n            \"email\": \"test@test.com\"\n        },\n        \"token\": \"1|P3iCR0lRpb4OmwfzcKLb9k0xlCDuQMZ7eoiwNXQq\"\n    },\n    \"message\": \"Successfully Login\",\n    \"code\": 200\n}"
+								}
+							]
+						},
+						{
+							"name": "profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "14|mh20KnVqaBPYhjiixM9KFjgx6oAtgdrLmcId7Qxi",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_customer_v1}}/profile",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_customer_v1}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Credential Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:26:39 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:26:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"failed\",\n    \"errors\": null,\n    \"message\": \"Credential Error\",\n    \"code\": 403\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"password\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:28:58 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 16:28:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"profile\": {\n            \"name\": \"Prof. Dave Nitzsche III\",\n            \"email\": \"test@test.com\"\n        },\n        \"token\": \"1|P3iCR0lRpb4OmwfzcKLb9k0xlCDuQMZ7eoiwNXQq\"\n    },\n    \"message\": \"Successfully Login\",\n    \"code\": 200\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Course",
+					"item": [
+						{
+							"name": "show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|dtMebWA9TbeMaJHY51uuWDsf3xaCMNmVL4oy9che",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_guest_v1}}/course/4",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_guest_v1}}"
+									],
+									"path": [
+										"course",
+										"4"
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "a",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "booking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|dtMebWA9TbeMaJHY51uuWDsf3xaCMNmVL4oy9che",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_customer_v1}}/course/4/appointment/1/book",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_customer_v1}}"
+									],
+									"path": [
+										"course",
+										"4",
+										"appointment",
+										"1",
+										"book"
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "a",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove booking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|dtMebWA9TbeMaJHY51uuWDsf3xaCMNmVL4oy9che",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_customer_v1}}/course/4/appointment/1/book",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_customer_v1}}"
+									],
+									"path": [
+										"course",
+										"4",
+										"appointment",
+										"1",
+										"book"
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "a",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dates",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|dtMebWA9TbeMaJHY51uuWDsf3xaCMNmVL4oy9che",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_customer_v1}}/course/4/dates",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_customer_v1}}"
+									],
+									"path": [
+										"course",
+										"4",
+										"dates"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{BaseUrlLocal}}{{endpoint_customer_v1}}/course/4/dates",
+											"host": [
+												"{{BaseUrlLocal}}{{endpoint_customer_v1}}"
+											],
+											"path": [
+												"course",
+												"4",
+												"dates"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 19:55:58 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 27 Dec 2022 19:55:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.6"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"start\": \"2022-12-27\",\n            \"end\": \"2022-12-28\"\n        },\n        {\n            \"id\": 4,\n            \"start\": \"2022-12-25\",\n            \"end\": \"2022-12-26\"\n        }\n    ],\n    \"message\": \"Successfully Get Dates\",\n    \"code\": 200\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Guest",
+			"item": [
+				{
+					"name": "Course",
+					"item": [
+						{
+							"name": "show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_guest_v1}}/course/4",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_guest_v1}}"
+									],
+									"path": [
+										"course",
+										"4"
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "a",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "related",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_guest_v1}}/course/4/related",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_guest_v1}}"
+									],
+									"path": [
+										"course",
+										"4",
+										"related"
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "a",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/course?page=1&start=2022-12-01&end=2022-12-28",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"course"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "start",
+											"value": "2022-12-01"
+										},
+										{
+											"key": "end",
+											"value": "2022-12-28"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|UU12XONmGCGxaJQstRwPjpZx2Td1qn2TULPKKUmP",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrlLocal}}{{endpoint_guest_v1}}/category",
+									"host": [
+										"{{BaseUrlLocal}}{{endpoint_guest_v1}}"
+									],
+									"path": [
+										"category"
+									],
+									"query": [
+										{
+											"key": "end",
+											"value": "a",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
